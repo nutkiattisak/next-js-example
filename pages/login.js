@@ -1,7 +1,12 @@
+import LoginTemplate from "../components/layouts/LoginTemplate";
+import Head from "next/head";
 
 export default function Index() {
     return (
-      <div>
+      <LoginTemplate>
+        <Head>
+          <title>เข้าสู่ระบบ</title>
+        </Head>
         <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-md w-full space-y-8">
             <div>
@@ -14,13 +19,12 @@ export default function Index() {
               <input type="hidden" name="remember" value="true" />
               <div className="rounded-md shadow-sm -space-y-px">
                 <div>
-                  <label className="sr-only">Email address</label>
+                  <label className="sr-only">Email</label>
                   <input
                     id="email-address"
                     name="email"
                     type="email"
                     autoComplete="email"
-                    required
                     className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Email address"
                   />
@@ -32,7 +36,6 @@ export default function Index() {
                     name="password"
                     type="password"
                     autoComplete="current-password"
-                    required
                     className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Password"
                   />
@@ -88,7 +91,7 @@ export default function Index() {
             </form>
           </div>
         </div>
-      </div>
+      </LoginTemplate>
     );
   }
   
