@@ -1,19 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import { render } from "react-dom";
+import Router from "next/router";
+
+const handleClickIndex = () =>
+  Router.push({
+    pathname: "/",
+  });
+
 export default function Navbar() {
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap bg-black p-3">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <Link href="/">
-            <Image
-              src="/logo.png"
-              alt="Picture of the author"
-              width={50}
-              height={50}
-            />
-          </Link>
+          <Image
+            onClick={() => handleClickIndex()}
+            src="/logo.png"
+            alt="Picture of the author"
+            width={50}
+            height={50}
+          />
         </div>
         <div className="block lg:hidden">
           <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -33,7 +39,7 @@ export default function Navbar() {
               <Link href="/about">about</Link>
             </li>
             <li className="block mt-4 lg:inline-block lg:mt-0 text-white uppercase hover:text-white mr-4">
-              <Link href="/work">game</Link>
+              <Link href="/game">game</Link>
             </li>
           </div>
           <div>
